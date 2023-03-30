@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+### REACT QUERY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What?
 
-## Available Scripts
+# A library for fetching data in a React application
 
-In the project directory, you can run:
+Why?
 
-### `yarn start`
+1. Since React is a Ul library, there is no specific pattern for data fetching
+2. useEffect hook for data fetching and useState hook to maintain component state like loadin
+   error or resulting data
+3. If the data is needed throughout the app, we tend to use state management libraries
+4. Most of the state management libraries are good for working with client state.
+   Ex: 'theme' for the application / whether a modal is open
+5. State management libraries are not great for working with asynchronous or server state
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Client state :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Persisted in your app memory and accessing or updating it is synchronous
 
-### `yarn test`
+Server state:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Persisted remotely and requires asynchronous APIs for fetching or updating
+Has shared ownership
+Data can be updated by someone else without your knowledge
+UI data may not be in sync with the remote data
+Challenging when you have to deal with caching, deduping multiple requests for the same data,
+updating stale data in the background, performance optimizations etc
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://bobbyhadz.com/blog/react-state-types#:~:text=%23%20Server%20State&text=It%20decreases%20the%20load%20on,users%20at%20the%20same%20time).
